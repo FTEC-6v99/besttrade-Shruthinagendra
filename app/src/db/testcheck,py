@@ -1,0 +1,12 @@
+import dao
+import app.src.domain.Portfolio
+
+
+def main():
+    portfolios = dao.get_all_portfolios()
+    for p in portfolios:
+        print(p)
+
+
+if __name__ == '__main__':
+    main()
