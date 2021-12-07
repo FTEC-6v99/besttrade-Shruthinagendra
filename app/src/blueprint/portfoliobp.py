@@ -4,7 +4,7 @@ from flask import Blueprint
 import app.src.db.dao as dao
 
 from app.src.domain.Portfolio import Portfolio
-
+#
 
 portfolio_bp = bp = Blueprint('portfolio', __name__, url_prefix='/portfolio')
 
