@@ -41,8 +41,8 @@ def delete_portfolio(account_number, ticker):
 
 
 @bp.route('/buy-stock/<account_number>/<ticker>/<quantity>/<purchase_price>', methods=['PUT'])
-def buy_stock(account_number, ticker, quantity, purchase_price):
-    portfolio = Portfolio(account_number, ticker, quantity, purchase_price)
+def buy_stock(ticker, quantity, price):
+    portfolio = Portfolio(ticker, quantity, price)
     try:
         dao.buy_stock(portfolio)
         return json.dumps(portfolio.__dict__)
@@ -51,8 +51,8 @@ def buy_stock(account_number, ticker, quantity, purchase_price):
 
 
 @bp.route('/sell-stock/<account_number>/<ticker>/<quantity>/<purchase_price>', methods=['PUT'])
-def sell_stock(account_number, ticker, quantity, purchase_price):
-    portfolio = Portfolio(account_number, ticker, quantity, purchase_price)
+def sell_stock(ticker, quantity, price):
+    portfolio = Portfolio(ticker, quantity, price)
     try:
         dao.sell_stock(portfolio)
         return json.dumps(portfolio.__dict__)
