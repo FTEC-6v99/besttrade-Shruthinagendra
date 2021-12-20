@@ -1,0 +1,27 @@
+<!doctype html>
+<title>Best Trade Investors</title>
+
+<body>
+    <div>
+        <a href="/ui/">Home</a>
+    </div>
+    <div>
+        <h1>Accounts</h1>
+    </div>
+    <table>
+        <tr>
+            <th>Investor ID</th>
+            <th>Account Number</th>
+            <th>Account Balance</th>
+            <th>Account status</th>
+        </tr>
+        {% for account in accounts %}
+        <tr>
+            <td>{{investor.id}}</td>
+            <td>{{account.account_number}}</td>
+            <td>{{account.balance}}</td>
+            <td>{{account.status}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
